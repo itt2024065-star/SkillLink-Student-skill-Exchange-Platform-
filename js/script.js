@@ -336,5 +336,6 @@ function connectPeer(btn, name) {
 
 function handleLogout() {
   
+function handleLogout() {
   window.location.href = 'index.html';
 }
