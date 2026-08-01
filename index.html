@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Skill-Link | Student Skill Exchange Platform</title>
+<meta name="description" content="Skill-Link — swap skills, earn peer trust badges, and get matched with fellow university students who can teach what you want to learn.">
+
+<!-- Bootstrap 5.3 -->
+<link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.3.3/css/bootstrap.min.css" rel="stylesheet">
+<!-- Bootstrap Icons -->
+<link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+<!-- Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+<!-- Custom Stylesheet -->
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<!-- ================= NAVBAR ================= -->
+<nav class="navbar navbar-expand-lg sl-navbar sticky-top">
+  <div class="container">
+    <a class="sl-brand" href="index.html">
+      <span class="brand-icon"><i class="bi bi-mortarboard-fill"></i></span>
+      Skill<span class="dot">-Link</span>
+    </a>
+
+    <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#slNav" aria-controls="slNav" aria-label="Toggle navigation">
+      <i class="bi bi-list fs-2"></i>
+    </button>
+
+    <div class="collapse navbar-collapse" id="slNav">
+      <ul class="navbar-nav mx-auto mt-3 mt-lg-0 gap-lg-1">
+        <li class="nav-item"><a class="nav-link sl-nav-link active" href="index.html" aria-current="page">Home</a></li>
+        <li class="nav-item"><a class="nav-link sl-nav-link" href="skills.html">Browse Skills</a></li>
+        <li class="nav-item"><a class="nav-link sl-nav-link" href="dashboard_2.html">Dashboard</a></li>
+        <li class="nav-item"><a class="nav-link sl-nav-link" href="contact.html">Contact</a></li>
+      </ul>
+      <div class="mt-3 mt-lg-0">
+        <a href="login.html" class="btn btn-sl-primary">
+          <i class="bi bi-box-arrow-in-right me-1"></i>Login / Register
+        </a>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<!-- ================= HERO ================= -->
+<header class="sl-hero">
+  <div class="container text-center">
+    <div class="row justify-content-center">
+      <div class="col-lg-10">
+        <span class="eyebrow"><i class="bi bi-stars"></i> Peer-to-peer learning, reimagined</span>
+        <h1>Exchange Skills, <span class="text-primary-brand">Excel</span> <span class="text-accent">Together</span></h1>
+        <p class="lead mx-auto">Skill-Link connects university students for credit-based skill swapping — teach what you know, learn what you don't, and grow together with peers who've been exactly where you are.</p>
+        <div class="d-flex flex-wrap gap-3 justify-content-center">
+          <a href="skills.html" class="btn btn-sl-primary btn-lg"><i class="bi bi-compass me-1"></i>Explore Skills</a>
+          <a href="dashboard_2.html" class="btn btn-sl-outline btn-lg"><i class="bi bi-speedometer2 me-1"></i>My Dashboard</a>
+        </div>
+
+        <div class="stats-banner">
+          <div class="stat-item">
+            <i class="bi bi-lightning-charge-fill"></i>
+            <div>
+              <div class="stat-num">500+</div>
+              <div class="stat-lbl">Skills Shared</div>
+            </div>
+          </div>
+          <div class="stat-item">
+            <i class="bi bi-patch-check-fill"></i>
+            <div>
+              <div class="stat-num">100+</div>
+              <div class="stat-lbl">Verified Tutors</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- ================= JS FEATURE 1: LIVE SWAP TICKER ================= -->
+<section class="ticker-bar">
+  <div class="container">
+    <div class="ticker-inner">
+      <span class="ticker-live-dot"></span>
+      <span class="ticker-label">Live</span>
+      <span id="tickerText"></span>
+    </div>
+  </div>
+</section>
+
+<!-- ================= KEY PLATFORM FEATURES ================= -->
+<section class="sl-section" id="features">
+  <div class="container">
+    <div class="text-center mb-5">
+      <div class="section-eyebrow">Why Skill-Link</div>
+      <h2 class="section-title">Built for how students actually learn</h2>
+      <p class="section-sub mx-auto">Three ideas from our project proposal, brought to life.</p>
+    </div>
+
+    <div class="row g-4">
+      <div class="col-md-4">
+        <div class="feature-card">
+          <div class="feature-icon indigo"><i class="bi bi-diagram-3-fill"></i></div>
+          <h3>Module-Centric Swaps</h3>
+          <p>Find targeted help for specific exam modules or lab practicals — not just a broad subject, but the exact topic you're stuck on.</p>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="feature-card">
+          <div class="feature-icon cyan"><i class="bi bi-patch-check-fill"></i></div>
+          <h3>Verified Peer Badges</h3>
+          <p>Earn trust badges like "Verified Tutor" and "Top Rated" by racking up teaching hours and strong reviews from fellow students.</p>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="feature-card">
+          <div class="feature-icon navy"><i class="bi bi-magic"></i></div>
+          <h3>Smart Matching</h3>
+          <p>Our AI-assisted matcher pairs you with peers based on your learning goals, skill level, and schedule — no more cold outreach.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= JS FEATURE 2: TESTIMONIALS CAROUSEL ================= -->
+<section class="sl-section testimonial-section">
+  <div class="container">
+    <div class="text-center mb-5">
+      <div class="section-eyebrow">Student Voices</div>
+      <h2 class="section-title">Loved by students across campus</h2>
+      <p class="section-sub mx-auto">Real feedback from peer tutors and learners already swapping skills on Skill-Link.</p>
+    </div>
+
+    <div id="testimonialCarousel" class="carousel slide" data-bs-ride="carousel" data-bs-interval="4500">
+      <div class="carousel-indicators">
+        <button type="button" data-bs-target="#testimonialCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+        <button type="button" data-bs-target="#testimonialCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+        <button type="button" data-bs-target="#testimonialCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
+        <button type="button" data-bs-target="#testimonialCarousel" data-bs-slide-to="3" aria-label="Slide 4"></button>
+      </div>
+
+      <div class="carousel-inner py-2">
+        <div class="carousel-item active">
+          <div class="testimonial-card">
+            <p class="testimonial-quote">"I swapped my Java knowledge for HTML lessons and passed my web module with the highest grade in my group. Skill-Link made it effortless to find the right peer."</p>
+            <p class="testimonial-name mb-0">Kasun Silva</p>
+            <p class="testimonial-role">2nd Year, BSc (Hons) in ICT</p>
+            <span class="verified-pill"><i class="bi bi-patch-check-fill"></i>Verified Tutor</span>
+          </div>
+        </div>
+
+        <div class="carousel-item">
+          <div class="testimonial-card">
+            <p class="testimonial-quote">"Teaching photography to classmates while learning Python from them felt like a fair, structured trade — not a favor. The badge system kept everyone accountable."</p>
+            <p class="testimonial-name mb-0">Ishara Fernando</p>
+            <p class="testimonial-role">3rd Year, Faculty of Technology</p>
+            <span class="verified-pill"><i class="bi bi-patch-check-fill"></i>Verified Tutor</span>
+          </div>
+        </div>
+
+        <div class="carousel-item">
+          <div class="testimonial-card">
+            <p class="testimonial-quote">"The Smart Matcher paired me with someone teaching public speaking in under a minute. Booked our first session that same evening."</p>
+            <p class="testimonial-name mb-0">Ruwan Jayasuriya</p>
+            <p class="testimonial-role">1st Year, BSc (Hons) in ICT</p>
+            <span class="verified-pill"><i class="bi bi-patch-check-fill"></i>Verified Tutor</span>
+          </div>
+        </div>
+
+        <div class="carousel-item">
+          <div class="testimonial-card">
+            <p class="testimonial-quote">"As a beginner I was nervous to ask for help, but the module-centric search found someone who'd just finished the exact same lab practical."</p>
+            <p class="testimonial-name mb-0">Dilani Perera</p>
+            <p class="testimonial-role">1st Year, Faculty of Technology</p>
+            <span class="verified-pill"><i class="bi bi-patch-check-fill"></i>Verified Tutor</span>
+          </div>
+        </div>
+      </div>
+
+      <button class="carousel-control-prev" type="button" data-bs-target="#testimonialCarousel" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#testimonialCarousel" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+      </button>
+    </div>
+  </div>
+</section>
+
+<!-- ================= CTA BAND ================= -->
+<section class="sl-section pt-0">
+  <div class="container">
+    <div class="cta-band">
+      <h2>Ready to start swapping skills?</h2>
+      <p>Join hundreds of students already teaching, learning, and earning verified tutor badges on Skill-Link.</p>
+      <a href="login.html" class="btn btn-sl-white btn-lg"><i class="bi bi-person-plus-fill me-1"></i>Create Your Free Account</a>
+    </div>
+  </div>
+</section>
+
+<!-- ================= FOOTER ================= -->
+<footer class="sl-footer">
+  <div class="container">
+    <div class="row g-4">
+      <div class="col-lg-4">
+        <div class="footer-brand">
+          <i class="bi bi-mortarboard-fill text-accent"></i> Skill<span class="dot">-Link</span>
+        </div>
+        <p>A student-built platform where university peers exchange skills, earn verified teaching badges, and grow together — no fees, just fair trade.</p>
+        <div class="footer-social">
+          <a href="#" aria-label="Facebook"><i class="bi bi-facebook"></i></a>
+          <a href="#" aria-label="Twitter / X"><i class="bi bi-twitter-x"></i></a>
+          <a href="#" aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a>
+          <a href="#" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
+        </div>
+      </div>
+
+      <div class="col-6 col-lg-4">
+        <h6>Quick Links</h6>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="skills.html">Browse Skills</a></li>
+          <li><a href="dashboard_2.html">Dashboard</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+
+      <div class="col-6 col-lg-4">
+        <h6>Account</h6>
+        <ul>
+          <li><a href="login.html">Login / Register</a></li>
+          <li><a href="contact.html">Get Support</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <hr class="footer-divider">
+
+    <div class="d-flex flex-wrap justify-content-between align-items-center footer-bottom">
+      <p class="mb-0">&copy; 2026 Skill-Link Platform. All rights reserved.</p>
+      <p class="mb-0">Built by students, for students.</p>
+    </div>
+  </div>
+</footer>
+
+<!-- Bootstrap 5 JS -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.3.3/js/bootstrap.bundle.min.js"></script>
+
+<!-- Custom Script -->
+<script src="js/script.js"></script>
+
+
+</body>
+</html>
