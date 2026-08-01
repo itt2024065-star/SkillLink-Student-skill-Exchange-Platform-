@@ -1,6 +1,6 @@
- /* =========================================================
-   DATA: sample skill listings (would come from MySQL in Phase 3)
-   ========================================================= */
+
+// skill js
+    
 const skillsData = [
   { id:1, name:'Kasun Silva', avatar:'https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?auto=format&fit=crop&w=150&q=80', skill:'Java', category:'Programming', level:'Advanced', rating:4.9, hours:40, badges:['verified','top-rated'] },
   { id:2, name:'Ishara Fernando', avatar:'https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&w=150&q=80', skill:'Photography', category:'Design', level:'Intermediate', rating:4.7, hours:22, badges:['verified'] },
@@ -19,9 +19,7 @@ const badgeInfo = {
   'top-rated': { icon:'bi-star-fill',        cls:'top-rated',  title:'Top Rated',      descTemplate: r => `${r} Average Rating from students they've taught.` }
 };
 
-/* =========================================================
-   FEATURE 1: Skill card rendering + filters (Dynamic Content)
-   ========================================================= */
+
 let currentPage = 1;
 const perPage = 6;
 
@@ -122,9 +120,7 @@ document.getElementById('searchInput').addEventListener('input', applyFilters);
 document.querySelectorAll('.filter-category, .filter-badge').forEach(el => el.addEventListener('change', applyFilters));
 document.querySelectorAll('input[name="levelFilter"]').forEach(el => el.addEventListener('change', applyFilters));
 
-/* =========================================================
-   FEATURE 1 (cont.): Badge modal
-   ========================================================= */
+
 function openBadgeModal(chip){
   const key = chip.dataset.badge;
   const info = badgeInfo[key];
@@ -143,9 +139,7 @@ function openBadgeModal(chip){
   new bootstrap.Modal(document.getElementById('badgeModal')).show();
 }
 
-/* =========================================================
-   Request Swap modal
-   ========================================================= */
+
 function openSwapModal(studentName, skillName){
   document.getElementById('swapStudentName').value = studentName;
   document.getElementById('swapSkillName').value = skillName;
@@ -178,9 +172,7 @@ function showToast(message){
   toastEl.addEventListener('hidden.bs.toast', () => toastEl.remove());
 }
 
-/* =========================================================
-   FEATURE 2: Smart Skill Matcher widget
-   ========================================================= */
+
 const allSkillNames = [...new Set(skillsData.map(c => c.skill))].sort();
 
 function populateMatcherDropdowns(){
@@ -258,9 +250,7 @@ function handleLogout(){
   window.location.href = 'index.html';
 }
 
-/* =========================================================
-   INIT
-   ========================================================= */
+
 document.addEventListener('DOMContentLoaded', function(){
   populateMatcherDropdowns();
   renderGrid();
