@@ -333,8 +333,12 @@ function connectPeer(btn, name) {
   btn.classList.add('is-sent');
 }
 
+<<<<<<< HEAD
 
 function handleLogout() {
   
+=======
+function handleLogout() {
+>>>>>>> aabf809b7c2ca7b261efcd015dc27bbe479c60b3
   window.location.href = 'index.html';
 }
