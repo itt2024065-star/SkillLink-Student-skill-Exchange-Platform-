@@ -304,3 +304,37 @@ document.addEventListener('DOMContentLoaded', function(){
   populateMatcherDropdowns();
   renderGrid();
 });
+// dashboard js
+
+document.addEventListener('DOMContentLoaded', function () {
+  var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'));
+  tooltipTriggerList.forEach(function (el) {
+    new bootstrap.Tooltip(el);
+  });
+});
+
+ function setStatus(btn, newStatus) {
+  var row = btn.closest('[data-row]');
+  var statusCell = row.querySelector('[data-status]');
+  var actionsCell = row.querySelector('[data-actions]');
+
+  if (newStatus === 'accepted') {
+    statusCell.innerHTML = '<span class="status-badge status-accepted">Accepted</span>';
+    actionsCell.innerHTML = '<span class="text-muted small"><i class="bi bi-check-circle me-1"></i>Request confirmed</span>';
+  } else if (newStatus === 'declined') {
+    statusCell.innerHTML = '<span class="status-badge status-declined">Declined</span>';
+    actionsCell.innerHTML = '<span class="text-muted small"><i class="bi bi-x-circle me-1"></i>Request closed</span>';
+  }
+}
+
+
+function connectPeer(btn, name) {
+  btn.textContent = 'Request Sent';
+  btn.classList.add('is-sent');
+}
+
+// Placeholder logout handler
+function handleLogout() {
+  // In Phase 3 this will call auth/logout.php to destroy the session
+  window.location.href = 'index.html';
+}
