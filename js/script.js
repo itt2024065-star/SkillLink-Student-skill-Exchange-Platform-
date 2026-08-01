@@ -333,8 +333,6 @@ function connectPeer(btn, name) {
   btn.classList.add('is-sent');
 }
 
-// Placeholder logout handler
 function handleLogout() {
-  // In Phase 3 this will call auth/logout.php to destroy the session
   window.location.href = 'index.html';
 }

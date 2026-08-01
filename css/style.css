@@ -30,10 +30,7 @@ a{ text-decoration:none; }
 
 .text-accent{ color:var(--sl-accent); }
 .text-primary-brand{ color:var(--sl-primary); }
-<<<<<<< HEAD
 
-=======
->>>>>>> 2601b28863610bc024562322beee489e2dc28b5c
 .sl-navbar{
   background:#fff;
   padding:.85rem 0;
@@ -104,10 +101,7 @@ a{ text-decoration:none; }
 }
 .btn-sl-white:hover{ background:var(--sl-accent-soft); color:var(--sl-primary-hover); }
 
-<<<<<<< HEAD
-=======
 
->>>>>>> 2601b28863610bc024562322beee489e2dc28b5c
 .sl-hero{
   background:linear-gradient(135deg, #EEEDFC 0%, #F8FAFC 55%, #E3FAFE 100%);
   padding:4rem 0 3rem;
@@ -187,10 +181,7 @@ a{ text-decoration:none; }
 }
 #tickerText.show{ opacity:1; }
 
-<<<<<<< HEAD
-=======
 
->>>>>>> 2601b28863610bc024562322beee489e2dc28b5c
 .sl-section{ padding:4.5rem 0; }
 .section-eyebrow{
   color:var(--sl-primary);
@@ -202,10 +193,7 @@ a{ text-decoration:none; }
 .section-title{ font-size:2rem; margin-bottom:.6rem; }
 .section-sub{ color:var(--sl-text-muted); max-width:560px; }
 
-<<<<<<< HEAD
-=======
 
->>>>>>> 2601b28863610bc024562322beee489e2dc28b5c
 .feature-card{
   background:#fff;
   border:1px solid var(--sl-border);
@@ -232,10 +220,7 @@ a{ text-decoration:none; }
 .feature-card h3{ font-size:1.15rem; margin-bottom:.6rem; }
 .feature-card p{ color:var(--sl-text-muted); font-size:.92rem; margin-bottom:0; }
 
-<<<<<<< HEAD
-=======
 
->>>>>>> 2601b28863610bc024562322beee489e2dc28b5c
 .testimonial-section{ background:#fff; }
 .testimonial-card{
   background:var(--sl-bg);
@@ -272,10 +257,7 @@ a{ text-decoration:none; }
   background-size:50%;
 }
 
-<<<<<<< HEAD
-=======
 
->>>>>>> 2601b28863610bc024562322beee489e2dc28b5c
 .cta-band{
   background:linear-gradient(120deg, var(--sl-primary), #6C63F5 60%, var(--sl-accent) 130%);
   border-radius:var(--radius-lg);
@@ -286,10 +268,7 @@ a{ text-decoration:none; }
 .cta-band h2{ margin-bottom:.6rem; }
 .cta-band p{ color:rgba(255,255,255,.85); max-width:520px; margin:0 auto 1.6rem; }
 
-<<<<<<< HEAD
-=======
 
->>>>>>> 2601b28863610bc024562322beee489e2dc28b5c
 .sl-footer{
   background:var(--sl-navy);
   color:rgba(255,255,255,.7);
