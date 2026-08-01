@@ -1,3 +1,55 @@
+// INDEX JS
+
+
+const tickerEvents = [
+  "Kasun swapped Java for Web Design — 2 mins ago",
+  "Ishara taught Photography to 3 students — 5 mins ago",
+  "Ruwan matched with a Guitar tutor — 9 mins ago",
+  "Dilani earned the Verified Tutor badge — 12 mins ago",
+  "Chamara swapped Python for French lessons — 15 mins ago",
+  "Sanduni booked a Public Speaking session — 18 mins ago",
+  "Hasitha reached 20+ teaching hours — 21 mins ago",
+  "Yashodha requested an HTML swap — 24 mins ago",
+  "Tharindu taught a Cooking workshop — 27 mins ago",
+  "Nimasha hit a 4.9 average rating — 30 mins ago"
+];
+
+let tickerIndex = 0;
+const tickerEl = document.getElementById('tickerText');
+
+function showTickerItem(){
+  tickerEl.textContent = tickerEvents[tickerIndex];
+  tickerEl.classList.add('show');
+}
+
+function rotateTicker(){
+  tickerEl.classList.remove('show'); 
+  setTimeout(() => {
+    tickerIndex = (tickerIndex + 1) % tickerEvents.length;
+    showTickerItem(); // fade in with new text
+  }, 400);
+}
+
+document.addEventListener('DOMContentLoaded', function(){
+  showTickerItem();
+  setInterval(rotateTicker, 3000);
+});
+
+
+const testimonialCarouselEl = document.getElementById('testimonialCarousel');
+const testimonialCarousel = new bootstrap.Carousel(testimonialCarouselEl, {
+  interval: 4500,
+  ride: 'carousel',
+  pause: 'hover',
+  wrap: true
+});
+
+
+testimonialCarouselEl.addEventListener('mouseenter', () => testimonialCarousel.pause());
+testimonialCarouselEl.addEventListener('mouseleave', () => testimonialCarousel.cycle());
+
+
+
 
 // skill js
     
@@ -196,7 +248,7 @@ function findMatch(){
     return;
   }
 
-  // Find candidates who teach the skill the user wants to learn, best rated first
+  
   const candidates = skillsData.filter(c => c.skill === want).sort((a,b) => b.rating - a.rating);
 
   if (candidates.length === 0){
@@ -206,7 +258,6 @@ function findMatch(){
   }
 
   const match = candidates[0];
-  // Dynamic match percentage calculation based on rating + a small variance
   const basePct = Math.round(70 + (match.rating - 4) * 20 + Math.random() * 6);
   const pct = Math.min(99, Math.max(65, basePct));
 
@@ -227,7 +278,6 @@ function findMatch(){
 
   resultWrap.classList.add('show');
 
-  // Trigger fade-in + count-up animation after render
   requestAnimationFrame(() => {
     document.getElementById('pctLine').classList.add('in');
     setTimeout(() => document.getElementById('matchedCard').classList.add('in'), 150);
@@ -246,7 +296,6 @@ function animateCount(el, target){
 }
 
 function handleLogout(){
-  // In Phase 3 this will call auth/logout.php to destroy the session
   window.location.href = 'index.html';
 }
 
