@@ -30,6 +30,7 @@ a{ text-decoration:none; }
 
 .text-accent{ color:var(--sl-accent); }
 .text-primary-brand{ color:var(--sl-primary); }
+
 .sl-navbar{
   background:#fff;
   padding:.85rem 0;
