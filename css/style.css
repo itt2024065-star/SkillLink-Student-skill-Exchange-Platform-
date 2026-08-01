@@ -346,7 +346,7 @@ body{
 h1,h2,h3,h4,h5,h6, .display-font{ font-family:'Poppins', sans-serif; }
 a{ text-decoration:none; }
 
-/* ---------- Navbar (shared) ---------- */
+
 .sl-navbar{ background:var(--sl-navy); padding:.7rem 0; }
 .sl-brand{ font-family:'Poppins', sans-serif; font-weight:800; font-size:1.35rem; color:#fff; letter-spacing:.2px; }
 .sl-brand .dot{ color:var(--sl-amber); }
@@ -363,18 +363,18 @@ a{ text-decoration:none; }
 .dropdown-menu-dark-custom .dropdown-item:hover{ background:rgba(255,255,255,.08); color:#fff; }
 .dropdown-menu-dark-custom .dropdown-divider{ border-color:rgba(255,255,255,.1); }
 
-/* ---------- Page header ---------- */
+
 .sl-page-header{ padding:1.8rem 0 .6rem; }
 .sl-page-header .eyebrow{ color:var(--sl-indigo); font-weight:700; font-size:.78rem; letter-spacing:1.5px; text-transform:uppercase; }
 .sl-page-header h2{ font-weight:700; font-size:1.7rem; margin-bottom:0; }
 .sl-page-header p{ color:var(--sl-text-muted); margin-bottom:0; }
 
-/* ---------- Cards ---------- */
+
 .sl-card{ background:var(--sl-card); border:1px solid var(--sl-border); border-radius:var(--radius-lg); padding:1.4rem; }
 .sl-card-title{ font-weight:700; font-size:1.05rem; margin-bottom:.2rem; }
 .sl-card-subtitle{ color:var(--sl-text-muted); font-size:.85rem; margin-bottom:1.1rem; }
 
-/* ---------- Smart Skill Matcher widget ---------- */
+
 .matcher-card{
   background:linear-gradient(135deg, var(--sl-navy) 0%, #2A3266 100%);
   border-radius:var(--radius-lg);
@@ -447,7 +447,6 @@ a{ text-decoration:none; }
 .matched-student-card .swap-line .swap-arrow{ color:var(--sl-amber); margin:0 .25rem; }
 .no-match-msg{ color:rgba(255,255,255,.8); font-size:.9rem; }
 
-/* ---------- Filters sidebar ---------- */
 .filter-label{ font-weight:700; font-size:.85rem; margin-bottom:.6rem; display:flex; align-items:center; gap:.4rem; }
 .form-check-label{ font-size:.88rem; color:var(--sl-text); }
 .filter-divider{ border-color:var(--sl-border); margin:1.1rem 0; }
@@ -460,7 +459,6 @@ a{ text-decoration:none; }
 .search-input-wrap i{ position:absolute; left:.8rem; top:50%; transform:translateY(-50%); color:var(--sl-text-muted); }
 .search-input-wrap input{ padding-left:2.2rem; border-radius:999px; border:1px solid var(--sl-border); font-size:.88rem; }
 
-/* ---------- Skill cards ---------- */
 .skill-card{
   background:var(--sl-card);
   border:1px solid var(--sl-border);
@@ -506,12 +504,10 @@ a{ text-decoration:none; }
 .empty-state{ text-align:center; padding:3rem 1rem; color:var(--sl-text-muted); }
 .empty-state i{ font-size:2.2rem; color:var(--sl-border); margin-bottom:.6rem; display:block; }
 
-/* Pagination */
 .sl-pagination .page-link{ color:var(--sl-indigo); border:none; font-weight:600; font-size:.85rem; }
 .sl-pagination .page-item.active .page-link{ background:var(--sl-indigo); color:#fff; border-radius:8px; }
 .sl-pagination .page-link:hover{ background:var(--sl-indigo-soft); border-radius:8px; }
 
-/* Modals */
 .modal-content{ border-radius:var(--radius-lg); border:none; }
 .badge-modal-icon{ width:56px; height:56px; border-radius:50%; display:flex; align-items:center; justify-content:center; font-size:1.5rem; margin-bottom:.8rem; }
 .badge-modal-icon.verified{ background:var(--sl-mint-soft); color:#177A57; }
