@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Browse Skills | Skill-Link</title>
+<meta name="description" content="Browse verified peer tutors on Skill-Link and find your smart skill match.">
+
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<nav class="navbar navbar-expand-lg sticky-top navbar-custom">
+  <div class="container">
+    <a class="navbar-brand" href="index.html"><span class="brand-mark">SL</span>Skill<span class="brand-accent">Link</span></a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMain" aria-controls="navMain" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navMain">
+      <ul class="navbar-nav ms-auto align-items-lg-center gap-lg-1">
+        <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+        <li class="nav-item"><a class="nav-link" href="skills.html">Browse Skills</a></li>
+        <li class="nav-item"><a class="nav-link" href="dashboard.html">Dashboard</a></li>
+        <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+        <li class="nav-item ms-lg-3"><a class="btn btn-outline-primary-custom btn-sm px-3" href="login.html">Login / Register</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<header class="py-5" style="background:var(--surface); border-bottom:1px solid var(--border);">
+  <div class="container">
+    <span class="eyebrow-badge">Browse Skills</span>
+    <h1 class="mb-2">Find a peer to swap with</h1>
+    <p class="fs-5">Filter by category, level, or trust badge &mdash; or let the Smart Skill Matcher find your best-fit peer below.</p>
+  </div>
+</header>
+
+<div class="container py-5">
+
+  <section class="matcher-widget mb-5" id="matcher">
+    <div class="row align-items-center g-4">
+      <div class="col-lg-4">
+        <h3 class="text-white mb-2">Find My Skill Match</h3>
+        <p class="text-white-50 mb-0">Pick what you want to learn and what you can teach. We'll calculate your best match instantly.</p>
+      </div>
+      <div class="col-lg-8">
+        <div class="row g-3 align-items-end">
+          <div class="col-sm-5">
+            <label for="matchWant" class="form-label text-white-50 small mb-1">Skill I Want to Learn</label>
+            <select id="matchWant" class="form-select">
+              <option value="">Choose a skill</option>
+              <option value="Java">Java</option>
+              <option value="Web Design">Web Design</option>
+              <option value="Python">Python</option>
+              <option value="Statistics">Statistics</option>
+              <option value="Excel">Excel</option>
+              <option value="UI Design">UI Design</option>
+              <option value="Public Speaking">Public Speaking</option>
+            </select>
+          </div>
+          <div class="col-sm-5">
+            <label for="matchTeach" class="form-label text-white-50 small mb-1">Skill I Can Teach</label>
+            <select id="matchTeach" class="form-select">
+              <option value="">Choose a skill</option>
+              <option value="Java">Java</option>
+              <option value="Web Design">Web Design</option>
+              <option value="Python">Python</option>
+              <option value="Statistics">Statistics</option>
+              <option value="Excel">Excel</option>
+              <option value="UI Design">UI Design</option>
+              <option value="Public Speaking">Public Speaking</option>
+            </select>
+          </div>
+          <div class="col-sm-2">
+            <button type="button" id="findMatchBtn" class="btn btn-primary-custom w-100">Find Match</button>
+          </div>
+        </div>
+        <div id="matchResultZone" class="mt-4"></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="filter-bar mb-4">
+    <div class="row g-3 align-items-end">
+      <div class="col-md-3">
+        <label for="filterCategory">Category</label>
+        <select id="filterCategory" class="form-select">
+          <option value="all">All categories</option>
+          <option value="programming">Programming</option>
+          <option value="design">Design</option>
+          <option value="academic">Academic</option>
+          <option value="soft-skills">Soft Skills</option>
+        </select>
+      </div>
+      <div class="col-md-3">
+        <label for="filterLevel">Skill Level</label>
+        <select id="filterLevel" class="form-select">
+          <option value="all">All levels</option>
+          <option value="Beginner">Beginner</option>
+          <option value="Intermediate">Intermediate</option>
+          <option value="Advanced">Advanced</option>
+        </select>
+      </div>
+      <div class="col-md-3">
+        <label for="filterBadge">Badge</label>
+        <select id="filterBadge" class="form-select">
+          <option value="all">All badges</option>
+          <option value="verified">Verified Tutor</option>
+          <option value="top">Top Rated</option>
+          <option value="newcomer">Newcomer</option>
+        </select>
+      </div>
+      <div class="col-md-3">
+        <label for="filterSearch">Search</label>
+        <input type="text" id="filterSearch" class="form-control" placeholder="e.g. Python, Java...">
+      </div>
+    </div>
+    <div class="mt-3 small text-muted" id="resultCount"></div>
+  </section>
+
+  <section class="row g-4" id="skillGrid">
+
+    <div class="col-md-6 col-lg-4 skill-card-col" data-category="programming" data-level="Intermediate" data-badges="verified" data-title="Java Programming Fundamentals">
+      <div class="skill-card">
+        <div class="d-flex justify-content-between align-items-start mb-3">
+          <span class="subject-tag">Programming</span>
+          <span class="level-pill">Intermediate</span>
+        </div>
+        <h5>Java Programming Fundamentals</h5>
+        <p class="small">OOP concepts, collections, and exception handling &mdash; taught around real CS201 past papers.</p>
+        <div class="d-flex align-items-center gap-2 mb-3">
+          <div class="tutor-avatar">KP</div>
+          <div>
+            <div class="fw-semibold small">Kasun Perera</div>
+            <span class="skill-badge badge-verified" data-badge-name="Verified Tutor" data-badge-reason="5+ Hours Taught, 4.8 Rating">&#10003; Verified Tutor</span>
+          </div>
+        </div>
+        <button type="button" class="btn btn-primary-custom w-100" data-bs-toggle="modal" data-bs-target="#swapModal" data-skill-title="Java Programming Fundamentals">Request Swap</button>
+      </div>
+    </div>
+
+    <div class="col-md-6 col-lg-4 skill-card-col" data-category="design" data-level="Beginner" data-badges="verified" data-title="Web Design with Bootstrap">
+      <div class="skill-card">
+        <div class="d-flex justify-content-between align-items-start mb-3">
+          <span class="subject-tag">Design</span>
+          <span class="level-pill">Beginner</span>
+        </div>
+        <h5>Web Design with Bootstrap</h5>
+        <p class="small">Layouts, components, and responsive grids for your own mini projects.</p>
+        <div class="d-flex align-items-center gap-2 mb-3">
+          <div class="tutor-avatar">DF</div>
+          <div>
+            <div class="fw-semibold small">Dinuka Fernando</div>
+            <span class="skill-badge badge-verified" data-badge-name="Verified Tutor" data-badge-reason="6+ Hours Taught, 4.7 Rating">&#10003; Verified Tutor</span>
+          </div>
+        </div>
+        <button type="button" class="btn btn-primary-custom w-100" data-bs-toggle="modal" data-bs-target="#swapModal" data-skill-title="Web Design with Bootstrap">Request Swap</button>
+      </div>
+    </div>
+
+    <div class="col-md-6 col-lg-4 skill-card-col" data-category="academic" data-level="Advanced" data-badges="top" data-title="Applied Statistics">
+      <div class="skill-card">
+        <div class="d-flex justify-content-between align-items-start mb-3">
+          <span class="subject-tag">Academic</span>
+          <span class="level-pill">Advanced</span>
+        </div>
+        <h5>Applied Statistics</h5>
+        <p class="small">Hypothesis testing and regression, with worked examples from past ST105 tutorials.</p>
+        <div class="d-flex align-items-center gap-2 mb-3">
+          <div class="tutor-avatar">NR</div>
+          <div>
+            <div class="fw-semibold small">Nimali Rathnayake</div>
+            <span class="skill-badge badge-top" data-badge-name="Top Rated" data-badge-reason="12+ Hours Taught, 4.9 Rating">Top Rated</span>
+          </div>
+        </div>
+        <button type="button" class="btn btn-primary-custom w-100" data-bs-toggle="modal" data-bs-target="#swapModal" data-skill-title="Applied Statistics">Request Swap</button>
+      </div>
+    </div>
+
+    <div class="col-md-6 col-lg-4 skill-card-col" data-category="programming" data-level="Beginner" data-badges="newcomer" data-title="Python for Data Basics">
+      <div class="skill-card">
+        <div class="d-flex justify-content-between align-items-start mb-3">
+          <span class="subject-tag">Programming</span>
+          <span class="level-pill">Beginner</span>
+        </div>
+        <h5>Python for Data Basics</h5>
+        <p class="small">Variables, loops, and simple data handling for first-year modules.</p>
+        <div class="d-flex align-items-center gap-2 mb-3">
+          <div class="tutor-avatar">IS</div>
+          <div>
+            <div class="fw-semibold small">Ishara De Silva</div>
+            <span class="skill-badge badge-newcomer" data-badge-name="Newcomer" data-badge-reason="Newly joined &mdash; 1 completed swap so far">Newcomer</span>
+          </div>
+        </div>
+        <button type="button" class="btn btn-primary-custom w-100" data-bs-toggle="modal" data-bs-target="#swapModal" data-skill-title="Python for Data Basics">Request Swap</button>
+      </div>
+    </div>
+
+    <div class="col-md-6 col-lg-4 skill-card-col" data-category="soft-skills" data-level="Intermediate" data-badges="top" data-title="Public Speaking Confidence">
+      <div class="skill-card">
+        <div class="d-flex justify-content-between align-items-start mb-3">
+          <span class="subject-tag">Soft Skills</span>
+          <span class="level-pill">Intermediate</span>
+        </div>
+        <h5>Public Speaking Confidence</h5>
+        <p class="small">Structuring presentations and managing nerves before a viva or class demo.</p>
+        <div class="d-flex align-items-center gap-2 mb-3">
+          <div class="tutor-avatar">SW</div>
+          <div>
+            <div class="fw-semibold small">Sachini Wijesuriya</div>
+            <span class="skill-badge badge-top" data-badge-name="Top Rated" data-badge-reason="9+ Hours Taught, 4.9 Rating">Top Rated</span>
+          </div>
+        </div>
+        <button type="button" class="btn btn-primary-custom w-100" data-bs-toggle="modal" data-bs-target="#swapModal" data-skill-title="Public Speaking Confidence">Request Swap</button>
+      </div>
+    </div>
+
+    <div class="col-md-6 col-lg-4 skill-card-col" data-category="design" data-level="Intermediate" data-badges="verified" data-title="UI Design in Figma">
+      <div class="skill-card">
+        <div class="d-flex justify-content-between align-items-start mb-3">
+          <span class="subject-tag">Design</span>
+          <span class="level-pill">Intermediate</span>
+        </div>
+        <h5>UI Design in Figma</h5>
+        <p class="small">Wireframing and prototyping basics for your Phase 1 project submission.</p>
+        <div class="d-flex align-items-center gap-2 mb-3">
+          <div class="tutor-avatar">TG</div>
+          <div>
+            <div class="fw-semibold small">Tharindu Gunasekara</div>
+            <span class="skill-badge badge-verified" data-badge-name="Verified Tutor" data-badge-reason="7+ Hours Taught, 4.6 Rating">&#10003; Verified Tutor</span>
+          </div>
+        </div>
+        <button type="button" class="btn btn-primary-custom w-100" data-bs-toggle="modal" data-bs-target="#swapModal" data-skill-title="UI Design in Figma">Request Swap</button>
+      </div>
+    </div>
+
+  </section>
+</div>
+
+<div class="modal fade" id="badgeInfoModal" tabindex="-1" aria-labelledby="badgeInfoTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="badgeInfoTitle">Badge</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body" id="badgeInfoBody">
+        Reason will appear here.
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="swapModal" tabindex="-1" aria-labelledby="swapModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <form id="swapForm">
+        <div class="modal-header">
+          <h5 class="modal-title" id="swapModalLabel">Request a Skill Swap</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <div class="mb-3">
+            <label for="swapSkillName" class="form-label">Skill</label>
+            <input type="text" class="form-control" id="swapSkillName" readonly>
+          </div>
+          <div class="mb-3">
+            <label for="swapOffer" class="form-label">What will you teach in return?</label>
+            <input type="text" class="form-control" id="swapOffer" placeholder="e.g. Excel, Photography" required>
+          </div>
+          <div class="mb-3">
+            <label for="swapNote" class="form-label">Message (optional)</label>
+            <textarea class="form-control" id="swapNote" rows="3" placeholder="Introduce yourself and suggest a time"></textarea>
+          </div>
+          <div id="swapConfirmMsg" class="alert alert-success py-2 small d-none mb-0">Swap request sent!</div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-outline-primary-custom" data-bs-dismiss="modal">Cancel</button>
+          <button type="submit" class="btn btn-primary-custom">Send Request</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="row g-4">
+      <div class="col-md-4">
+        <h6 class="mb-2">Skill-Link</h6>
+        <p class="small mb-0">A student skill exchange platform built for Rajarata University of Sri Lanka, Department of ICT.</p>
+      </div>
+      <div class="col-md-4">
+        <h6 class="mb-2">Quick Links</h6>
+        <ul class="list-unstyled small">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="skills.html">Browse Skills</a></li>
+          <li><a href="dashboard.html">Dashboard</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div class="col-md-4">
+        <h6 class="mb-2">Connect</h6>
+        <div class="footer-social">
+          <a href="#" aria-label="Facebook">f</a>
+          <a href="#" aria-label="Instagram">i</a>
+          <a href="#" aria-label="LinkedIn">in</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom text-center">
+      &copy; 2026 Skill-Link &middot; Rajarata University of Sri Lanka &middot; ICT 1209 Mini Project
+    </div>
+  </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="js/script.js"></script>
+</body>
+</html>
