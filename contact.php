@@ -1,3 +1,27 @@
+<?php
+require_once 'includes/db.php';
+require_once 'includes/functions.php';
+
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    $name = trim($_POST['name'] ?? '');
+    $email = trim($_POST['email'] ?? '');
+    $message = trim($_POST['message'] ?? '');
+
+    if (strlen($name) < 2 || !filter_var($email, FILTER_VALIDATE_EMAIL) || strlen($message) < 10) {
+        set_flash('contact_error', 'Please check your details: name (2+ chars), a valid email, and a message of 10+ characters.');
+    } else {
+        $stmt = $pdo->prepare('INSERT INTO messages (name, email, message) VALUES (?, ?, ?)');
+        $stmt->execute([$name, $email, $message]);
+        set_flash('contact_success', "Thanks — your message has been sent. We'll reply to your email soon.");
+    }
+
+    header('Location: contact.php');
+    exit;
+}
+
+$contactError = get_flash('contact_error');
+$contactSuccess = get_flash('contact_success');
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -20,10 +44,10 @@
     <div class="collapse navbar-collapse" id="navMain">
       <ul class="navbar-nav ms-auto align-items-lg-center gap-lg-1">
         <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
-        <li class="nav-item"><a class="nav-link" href="skills.html">Browse Skills</a></li>
-        <li class="nav-item"><a class="nav-link" href="dashboard.html">Dashboard</a></li>
-        <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
-        <li class="nav-item ms-lg-3"><a class="btn btn-outline-primary-custom btn-sm px-3" href="login.html">Login / Register</a></li>
+        <li class="nav-item"><a class="nav-link" href="skills.php">Browse Skills</a></li>
+        <li class="nav-item"><a class="nav-link" href="dashboard.php">Dashboard</a></li>
+        <li class="nav-item"><a class="nav-link" href="contact.php">Contact</a></li>
+        <li class="nav-item ms-lg-3"><a class="btn btn-outline-primary-custom btn-sm px-3" href="login.php">Login / Register</a></li>
       </ul>
     </div>
   </div>
@@ -42,23 +66,21 @@
     <div class="col-lg-6">
       <div class="form-panel">
         <h4 class="mb-3">Send a message</h4>
-        <form id="contactForm" novalidate>
+        <?php if ($contactError): ?><div class="alert alert-danger py-2 small"><?php echo e($contactError); ?></div><?php endif; ?>
+        <?php if ($contactSuccess): ?><div class="alert alert-success py-2 small"><?php echo e($contactSuccess); ?></div><?php endif; ?>
+        <form id="contactForm" method="post" action="contact.php" novalidate>
           <div class="mb-3">
             <label for="contactName" class="form-label">Full Name</label>
-            <input type="text" class="form-control" id="contactName" required>
-            <div class="field-error" id="contactNameError">Please enter your full name (at least 2 characters).</div>
+            <input type="text" class="form-control" id="contactName" name="name" minlength="2" required>
           </div>
           <div class="mb-3">
             <label for="contactEmail" class="form-label">Email</label>
-            <input type="email" class="form-control" id="contactEmail" required>
-            <div class="field-error" id="contactEmailError">Please enter a valid email address.</div>
+            <input type="email" class="form-control" id="contactEmail" name="email" required>
           </div>
           <div class="mb-3">
             <label for="contactMessage" class="form-label">Message</label>
-            <textarea class="form-control" id="contactMessage" rows="5" required></textarea>
-            <div class="field-error" id="contactMessageError">Your message should be at least 10 characters.</div>
+            <textarea class="form-control" id="contactMessage" name="message" rows="5" minlength="10" required></textarea>
           </div>
-          <div id="contactSuccess" class="alert alert-success py-2 small d-none">Thanks &mdash; your message has been sent. We'll reply to your email soon.</div>
           <button type="submit" class="btn btn-primary-custom w-100">Send Message</button>
         </form>
       </div>
@@ -95,9 +117,9 @@
         <h6 class="mb-2">Quick Links</h6>
         <ul class="list-unstyled small">
           <li><a href="index.html">Home</a></li>
-          <li><a href="skills.html">Browse Skills</a></li>
-          <li><a href="dashboard.html">Dashboard</a></li>
-          <li><a href="contact.html">Contact</a></li>
+          <li><a href="skills.php">Browse Skills</a></li>
+          <li><a href="dashboard.php">Dashboard</a></li>
+          <li><a href="contact.php">Contact</a></li>
         </ul>
       </div>
       <div class="col-md-4">
